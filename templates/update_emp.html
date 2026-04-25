@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 class="my-5">Update employee details</h3>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="eg..name" value="{{ emp.name }}" class="form-group d-block my-2">
+    <input type="email" name="email" placeholder="eg..abc@gmail.com" value="{{ emp.email }}" class="form-group d-block my-2">
+    <input type="number" name="phone" placeholder="eg..phone no" value="{{ emp.phone }}" class="form-group d-block my-2">
+    <input type="text" name="department" placeholder="eg..IT" value="{{ emp.department }}" class="form-group d-block my-2">
+    <input type="number" name="salary" placeholder="eg..12500" value="{{ emp.salary }}" class="form-group d-block my-2">
+    <button class="btn btn-success">update</button>
+</form>
+
+{% endblock %}

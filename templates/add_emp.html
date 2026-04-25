@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 class="my-5">Add employee details</h3>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="eg..name" class="form-group d-block my-2">
+    <input type="email" name="email" placeholder="eg..abc@gmail.com" class="form-group d-block my-2">
+    <input type="number" name="phone" placeholder="eg..phone no" class="form-group d-block my-2">
+    <input type="text" name="department" placeholder="eg..IT" class="form-group d-block my-2">
+    <input type="number" name="salary" placeholder="eg..12500" class="form-group d-block my-2">
+    <button class="btn btn-success">save</button>
+</form>
+
+{% endblock %}

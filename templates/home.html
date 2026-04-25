@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/add/" class="btn btn-primary m-4">add employee</a>
+
+<table class="table table-bordered">
+<tr>
+    <th>ID</th>
+    <th>name</th>
+    <th>email</th>
+    <th>phone</th>
+    <th>department</th>
+    <th>salary</th>
+</tr>
+{% for emp in employees %}
+<tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.email }}</td>
+    <td>{{ emp.phone }}</td>
+    <td>{{ emp.department }}</td>
+    <td>{{ emp.salary }}</td>
+    <td>
+        <a href="/edit/{{ emp.id }}" class="btn btn-primary">edit</a>
+        <a href="/delete/{{ emp.id }}" class="btn btn-danger">delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}
